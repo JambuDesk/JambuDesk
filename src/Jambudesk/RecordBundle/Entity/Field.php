@@ -24,7 +24,7 @@ class Field
 
     /**
      * @ORM\ManyToOne(targetEntity="Form", inversedBy="fields")
-     * @ORM\JoinColumn(name="form_id", referencedColumnName="id")
+     * @ORM\JoinColumn(name="formId", referencedColumnName="id")
      */
     protected $form;
     
@@ -50,7 +50,7 @@ class Field
      
     public function __construct()
     {
-        $this->fieldOptions = new ArrayCollection();
+        $this->fieldOptions = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**

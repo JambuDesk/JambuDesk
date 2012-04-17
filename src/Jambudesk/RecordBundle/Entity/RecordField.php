@@ -24,8 +24,8 @@ class RecordField
     /**
      * @var Record $record
      *
-     * @ORM\ManyToOne(targetEntity="Record", inversedBy="recordOptions")
-     * @ORM\JoinColumn(name="record_id", referencedColumnName="id")
+     * @ORM\ManyToOne(targetEntity="Record", inversedBy="recordFields")
+     * @ORM\JoinColumn(name="recordId", referencedColumnName="id")
      */
     private $record;
 
@@ -48,7 +48,7 @@ class RecordField
     /**
      * @var text $textValue
      *
-     * @ORM\Column(name="textValue", type="text")
+     * @ORM\Column(name="textValue", type="text", nullable=true)
      */
     private $textValue;
 

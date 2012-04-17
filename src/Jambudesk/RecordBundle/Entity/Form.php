@@ -40,7 +40,7 @@ class Form
     
     public function __construct()
     {
-        $this-> fields = new ArrayCollection();
+        $this->fields = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**

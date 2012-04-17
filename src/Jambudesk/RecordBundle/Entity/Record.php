@@ -44,14 +44,14 @@ class Record
     private $lastModifiedOn;
 	
 	 /**
-     * @ORM\OneToMany(targetEntity="RecordOption", mappedBy="record")
+     * @ORM\OneToMany(targetEntity="RecordField", mappedBy="record")
      */
-    protected $recordOptions;
+    protected $recordFields;
 	
 	
 	public function __construct()
     {
-        $this->recordOptions = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->recordFields = new \Doctrine\Common\Collections\ArrayCollection();
     }
     
     /**
@@ -142,5 +142,25 @@ class Record
     public function getRecordOptions()
     {
         return $this->recordOptions;
+    }
+
+    /**
+     * Add recordFields
+     *
+     * @param Jambudesk\RecordBundle\Entity\RecordField $recordFields
+     */
+    public function addRecordField(\Jambudesk\RecordBundle\Entity\RecordField $recordFields)
+    {
+        $this->recordFields[] = $recordFields;
+    }
+
+    /**
+     * Get recordFields
+     *
+     * @return Doctrine\Common\Collections\Collection 
+     */
+    public function getRecordFields()
+    {
+        return $this->recordFields;
     }
 }

@@ -22,8 +22,8 @@ class FieldOption
     protected $id;
 	
     /**
-     * @ORM\ManyToOne(targetEntity="Fields", inversedBy="fieldOptions")
-     * @ORM\JoinColumn(name="field_id", referencedColumnName="id")
+     * @ORM\ManyToOne(targetEntity="Field", inversedBy="fieldOptions")
+     * @ORM\JoinColumn(name="fieldId", referencedColumnName="id")
      */
     protected $field;
     
