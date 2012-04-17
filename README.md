@@ -29,7 +29,7 @@ web version of the Symfony requirements check via:
     http://localhost/Symfony/web/config.php
 
 Use the web-based configurator by clicking on the "Configure your
-Symfony Application online" link of the ``config.php`` page.
+Symfony Application online" link of the ``config.php`` page. Define your database connection details here.
 
 To see a real-live Symfony page in action, access the following page:
 
