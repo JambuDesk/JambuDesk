@@ -34,6 +34,11 @@ class Field
     protected $type;
     
     /**
+     * @ORM\Column(type="string", length=32)
+     */
+    protected $name;
+    
+    /**
      * @ORM\Column(type="boolean")
      */
     protected $isVisible;
@@ -161,5 +166,25 @@ class Field
     public function getFieldOptions()
     {
         return $this->fieldOptions;
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string 
+     */
+    public function getName()
+    {
+        return $this->name;
     }
 }
