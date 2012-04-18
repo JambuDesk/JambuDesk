@@ -45,3 +45,6 @@ playing with it, you can remove it by following these steps:
 * delete the ``src/Acme`` directory;
 * remove the routing entries referencing AcmeBundle in ``app/config/routing_dev.yml``;
 * remove the AcmeBundle from the registered bundles in ``app/AppKernel.php``;
+
+Windows users please read the following issue.
+https://github.com/symfony/symfony/issues/3216
