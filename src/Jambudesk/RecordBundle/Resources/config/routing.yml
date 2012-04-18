@@ -1,3 +1,11 @@
 JambudeskRecordBundle_homepage:
     pattern:  /hello/{name}
     defaults: { _controller: JambudeskRecordBundle:Default:index }
+
+JambudeskRecordBundle_form:
+    pattern:  /form/{slug}
+    defaults: { _controller: JambudeskRecordBundle:Form:index }
+
+JambudeskRecordBundle_save_record:
+    pattern:  /form/{form_id}/save
+    defaults: { _controller: JambudeskRecordBundle:Form:index }
