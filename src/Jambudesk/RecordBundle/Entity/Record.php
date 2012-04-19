@@ -44,12 +44,12 @@ class Record
     private $lastModifiedOn;
 	
 	 /**
-     * @ORM\OneToMany(targetEntity="RecordField", mappedBy="record")
+     * @ORM\OneToMany(cascade={"persist"}, targetEntity="RecordField", mappedBy="record")
      */
     protected $recordFields;
 	
 	
-	public function __construct()
+    public function __construct()
     {
         $this->recordFields = new \Doctrine\Common\Collections\ArrayCollection();
     }

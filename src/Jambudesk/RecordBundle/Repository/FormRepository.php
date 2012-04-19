@@ -17,6 +17,16 @@ class FormRepository extends EntityRepository
             'SELECT f FROM JambudeskRecordBundle:Form f WHERE f.slug = :slug'
         )->setParameter('slug', $slug);
 
-        $citation = $query->getResult();
+        return $query->getResult();
+    }
+    
+    public function findOneById($id)
+    {
+        $em = $this->getEntityManager();
+        $query = $em->createQuery(
+            'SELECT f FROM JambudeskRecordBundle:Form f WHERE f.id = :id'
+        )->setParameter('id', $id);
+
+        return $query->getResult();
     }
 }
