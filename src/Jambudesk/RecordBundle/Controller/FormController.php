@@ -27,7 +27,7 @@ class FormController extends Controller {
             else{
                 $fieldOptions = array();
                 foreach($field->getFieldOptions() as $f){
-                    array_push($fieldOptions,$f->getValue());
+                    $fieldOptions[$f->getId()]=$f->getValue();
                 }
                 $formBuilder->add($field->getName(), $field->getType(), array(
                     'choices'   => $fieldOptions,

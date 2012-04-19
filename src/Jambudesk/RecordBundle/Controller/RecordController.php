@@ -39,8 +39,13 @@ class RecordController extends Controller {
             $recordField = new RecordField();
             $recordField->setRecord($record);
             $recordField->setField($field);
-            $recordField->setTextValue($postData[$field->getName()]);
-            
+            if($field->getIsText()){
+                $recordField->setTextValue($postData[$field->getName()]);
+            }
+            else{
+                $fieldOption = $entityManager->getRepository('JambudeskRecordBundle:FieldOption')->findOneById($postData[$field->getName()]);
+                $recordField->setfieldOption($fieldOption);
+            }
             $record->addRecordField($recordField);
         }       
         
@@ -52,5 +57,3 @@ class RecordController extends Controller {
     }
 
 }
-
-?>
